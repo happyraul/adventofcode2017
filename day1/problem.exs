@@ -13,8 +13,8 @@ defmodule Pipeline do
     end
   end
 
-  def add(items) when elem(items, 0) == elem(items, 1) do
-    elem(items, 0) - ?0
+  def add({a, b}) when a == b do
+    a - ?0
   end
   def add(_) when true, do: 0
   
