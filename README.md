@@ -3,6 +3,6 @@
 To execute a solution (with elixir installed):
 
 ```  
-$ cd dayX && iex problem.exs
+$ cd solutions && iex dayX.exs
 ```
 
