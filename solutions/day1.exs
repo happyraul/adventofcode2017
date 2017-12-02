@@ -13,10 +13,8 @@ defmodule Pipeline do
     end
   end
 
-  def add({a, b}) when a == b do
-    a - ?0
-  end
-  def add(_) when true, do: 0
+  def add({a, a}), do: a - ?0
+  def add(_), do: 0
   
   def make_list(<< head :: integer, tail :: bitstring >>) do 
     [ head | make_list(tail) ]
@@ -25,15 +23,15 @@ defmodule Pipeline do
   def make_list(<<>>), do: []
 end
 
-input = String.trim(elem(File.read("input.txt"), 1))
+input = String.trim(elem(File.read("day1.txt"), 1))
 
-part1 = String.trim(elem(File.read("input.txt"), 1))
+part1 = String.trim(elem(File.read("day1.txt"), 1))
   |> Pipeline.make_list
   |> Pipeline.group
   |> Enum.map(&Pipeline.add/1)
   |> Enum.sum
 
-part2 = String.trim(elem(File.read("input.txt"), 1))
+part2 = String.trim(elem(File.read("day1.txt"), 1))
   |> Pipeline.make_list
   |> Pipeline.group(div(String.length(input), 2))
   |> Enum.map(&Pipeline.add/1)
