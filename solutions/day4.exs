@@ -24,10 +24,9 @@ defmodule Passphrase do
 end
 
 {:ok, input} = File.read("day4.txt")
-input = String.trim(input)
 
 common = input
-  |> String.trim()
+  |> String.trim
   |> String.split("\n")
   |> Enum.map(&String.split/1)
 
